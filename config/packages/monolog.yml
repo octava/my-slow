@@ -1,0 +1,20 @@
+monolog:
+    use_microseconds: false
+    channels:
+        - my_slow_collect
+    handlers:
+        main:
+            type:         fingers_crossed
+            action_level: error
+            handler:      nested
+        nested:
+            type:  stream
+            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+        console:
+            type:  console
+        my_slow_collect:
+            type:     stream
+            level:    info
+            path:     '%kernel.logs_dir%/collect/collect.log'
+            channels: ['my_slow_collect']

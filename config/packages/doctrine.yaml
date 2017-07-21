@@ -1,0 +1,23 @@
+doctrine:
+    dbal:
+        connections:
+            default:
+                driver: pdo_sqlite
+                path: '%kernel.root_dir%/var/sqlite.db'
+                charset: UTF8
+            collect:
+                url: '%env(DATABASE_URL)%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        entity_managers:
+            default:
+                naming_strategy: doctrine.orm.naming_strategy.underscore
+                auto_mapping: true
+                mappings:
+                    MySlow:
+                        is_bundle: false
+                        type: annotation
+                        dir: '%kernel.project_dir%/src/Entity'
+                        prefix: 'Octava\MySlow\Entity\'
+                        alias: MySlow

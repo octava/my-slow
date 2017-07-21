@@ -40,9 +40,9 @@ final class Kernel extends BaseKernel
 
     protected function prepareContainer(ContainerBuilder $container)
     {
-        $container->registerExtension(new MySlowExtension());
-
         parent::prepareContainer($container);
+
+        $container->registerExtension(new MySlowExtension());
     }
 
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void

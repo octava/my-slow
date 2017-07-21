@@ -1,0 +1,9 @@
+services:
+    Octava\MySlow\MessageBus\CollectHandler:
+        arguments:
+            - '@logger'
+        tags:
+            - name: command_handler
+              handles: Octava\MySlow\MessageBus\CollectMessage
+            - name: monolog.logger
+              channel: 'my_slow_collect'

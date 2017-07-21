@@ -1,0 +1,18 @@
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            channels: [!event, !doctrine]
+        console:
+            type:   console
+            channels: [!event, !doctrine]
+        doctrine:
+            type:     stream
+            path:     '%kernel.logs_dir%/doctrine_%kernel.environment%.log'
+            channels: [doctrine]
+        event:
+            type:     stream
+            path:     '%kernel.logs_dir%/event_%kernel.environment%.log'
+            channels: [event]

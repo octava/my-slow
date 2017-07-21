@@ -11,9 +11,11 @@
     "description": "MySQL slow queries collector",
     "require": {
         "php": "^7.1.3",
+        "simple-bus/symfony-bridge": "^4.1",
         "symfony/console": "^3.3",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^3.3",
+        "symfony/monolog-bundle": "^3.1",
         "symfony/yaml": "^3.3"
     },
     "require-dev": {
@@ -54,9 +56,6 @@
         "symfony/debug": "<3.3"
     },
     "extra": {
-        "bin": [
-            "bin/my-slow"
-        ],
         "symfony": {
             "id": "01BNG7MZ7GN0PGV3SPENDST7TG",
             "allow-contrib": false
