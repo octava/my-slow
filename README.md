@@ -1,0 +1,2 @@
+# MySQL slow queries collector
+
